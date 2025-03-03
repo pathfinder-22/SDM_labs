@@ -1,7 +1,13 @@
 {
   "devDependencies": {
+    "@types/node": "^22.13.8",
     "eslint": "^8.57.1",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.31.0"
+    "eslint-plugin-import": "^2.31.0",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
   }
 }

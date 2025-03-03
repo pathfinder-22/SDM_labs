@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "outDir": "./dist",  // Указывает, что компилированные файлы попадут в папку dist
+      "rootDir": "./src",  // Указывает папку, где находятся исходники (src)
+      "target": "ES6",
+      "module": "commonjs",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true
+    },
+    "include": ["src/**/*"],  // Указываем, что компилировать все файлы из папки src
+    "exclude": ["node_modules"]
+  }
+  
