@@ -1,0 +1,13 @@
+env:
+  es6: true
+  node: true
+
+extends:
+  - airbnb-base
+
+plugins:
+  - import
+
+rules:
+  no-console: off  # Отключаем правило no-console
+  import/extensions: off  # Отключаем правило import/extensions
