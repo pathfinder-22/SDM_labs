@@ -1,3 +1,3 @@
-import { playGame } from './game';
+import play from './game';
 
-playGame();
+play();

@@ -17,6 +17,7 @@ rules:
   import/extensions: off  # отключение правила import/extensions
   '@typescript-eslint/no-unused-vars': ['error', { 'argsIgnorePattern': '^_' }]  # отключение ошибок для неиспользуемых аргументов, начинающихся с "_"
   linebreak-style: 0 # отключение проверки типа конца строки
+  import/no-unresolved: off
   
 overrides:
   - files: ['*.ts']  # настройка для TypeScript файлов
