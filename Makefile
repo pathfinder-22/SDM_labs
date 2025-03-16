@@ -1,4 +1,10 @@
+# Запуск линтера
 lint:
 	npx eslint .
+# Компиляция проекта
 build:
-    tsc
+	npx tsc
+
+# Запуск проекта
+start:
+	npx ts-node src/index.ts

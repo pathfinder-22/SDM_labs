@@ -4,10 +4,21 @@ env:
 
 extends:
   - airbnb-base
+  - plugin:@typescript-eslint/recommended  # TypeScript рекомендации
+
+parser: '@typescript-eslint/parser'  # парсер для TypeScript
 
 plugins:
   - import
+  - '@typescript-eslint'  # плагин для TypeScript
 
 rules:
-  no-console: off  # Отключаем правило no-console
-  import/extensions: off  # Отключаем правило import/extensions
+  no-console: off  # отключение правила no-console
+  import/extensions: off  # отключение правила import/extensions
+  '@typescript-eslint/no-unused-vars': ['error', { 'argsIgnorePattern': '^_' }]  # отключение ошибок для неиспользуемых аргументов, начинающихся с "_"
+  linebreak-style: 0 # отключение проверки типа конца строки
+  
+overrides:
+  - files: ['*.ts']  # настройка для TypeScript файлов
+    rules:
+      '@typescript-eslint/explicit-module-boundary-types': off  # отключение требования явного указания типов
