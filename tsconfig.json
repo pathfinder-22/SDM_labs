@@ -1,14 +1,14 @@
 {
     "compilerOptions": {
-      "outDir": "./dist",  // Указывает, что компилированные файлы попадут в папку dist
-      "rootDir": "./src",  // Указывает папку, где находятся исходники (src)
-      "target": "ES6",
-      "module": "commonjs",
-      "strict": true,
-      "esModuleInterop": true,
-      "skipLibCheck": true
+      "target": "ES2020",               // Версия JS, в которую будет транслироваться TS
+      "module": "commonjs",              // Модульная система для Node.js
+      "strict": true,                    // Включает строгую типизацию
+      "esModuleInterop": true,           // Для корректного импорта ES-модулей
+      "skipLibCheck": true,              // Пропуск проверки типов библиотек
+      "forceConsistentCasingInFileNames": true, // Стабильные регистры в путях файлов
+      "noEmit": true                     // ВАЖНО! Этот параметр предотвращает генерацию JS файлов
     },
-    "include": ["src/**/*"],  // Указываем, что компилировать все файлы из папки src
-    "exclude": ["node_modules"]
+    "include": ["src/**/*.ts"],          // Указываем, какие файлы включать в проект
+    "exclude": ["node_modules"]          // Исключаем папки
   }
   
