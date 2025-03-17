@@ -50,13 +50,13 @@ function askLCM(name: string, round: number, rounds: number) {
 
 function generateProgression(start: number, ratio: number, length: number): number[] {
   const progression = [];
-  for (let i = 0; i < length; i++) {
-    progression.push(start * Math.pow(ratio, i));
+  for (let i = 0; i < length; i += 1) {
+    progression.push(start * (ratio ** i));
   }
   return progression;
 }
 
-function askProgression(name: string, round: number, rounds: number){
+function askProgression(name: string, round: number, rounds: number) {
   if (round >= rounds) {
     console.log(`Congratulations, ${name}!`);
     rl.close();
@@ -74,14 +74,14 @@ function askProgression(name: string, round: number, rounds: number){
   const correctAnswer = progression[hiddenIndex];
   progression[hiddenIndex] = NaN;
 
-  const progressionWithDots = progression.map(num => isNaN(num) ? '..' : num).join(' ');
+  const progressionWithDots = progression.map((num) => (Number.isNaN(num) ? '..' : num)).join(' ');
   console.log(`Question: ${progressionWithDots}`);
 
-  rl.question("Your answer: ", (userInput) => {
+  rl.question('Your answer: ', (userInput) => {
     const userAnswer = Number(userInput);
 
     if (userAnswer === correctAnswer) {
-      console.log("Correct!");
+      console.log('Correct!');
       askProgression(name, round + 1, rounds);
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
@@ -104,7 +104,7 @@ export default function play(): void {
         askLCM(name, 0, rounds); // Вызываем функцию для игры с НОК
       } else if (choice === '2') {
         console.log('You chose the Progression game!');
-        console.log("Find the missing element in Geometric Progression.");
+        console.log('Find the missing element in Geometric Progression.');
         askProgression(name, 0, rounds); // Вызываем функцию для игры с прогрессией
       } else {
         console.log('Invalid choice. Game not found.');
