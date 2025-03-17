@@ -1,11 +1,4 @@
-import * as readline from 'readline';
-import { generateProgression, getRandomInt } from './features';
-
-// интерфейс для взаимодействия с консолью
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+import { generateProgression, getRandomInt, rl } from './features';
 
 export default function askProgression(name: string, round: number, rounds: number) {
   if (round >= rounds) {

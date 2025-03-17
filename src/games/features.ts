@@ -1,3 +1,10 @@
+import * as readline from 'readline';
+// интерфейс для взаимодействия с консолью
+export const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
 export function getRandomInt(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min) + min);
 }
