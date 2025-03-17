@@ -1,26 +1,11 @@
 import * as readline from 'readline';
+import { findLCM, getRandomInt } from './features';
 
 // интерфейс для взаимодействия с консолью
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-
-function getRandomInt(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min) + min);
-  }
-  
-  function gcd(a: number, b: number): number {
-    return b === 0 ? a : gcd(b, a % b);
-  }
-  
-  function lcm(a: number, b: number): number {
-    return (a * b) / gcd(a, b);
-  }
-  
-  function findLCM(numbers: number[]): number {
-    return numbers.reduce((acc, cur) => lcm(acc, cur), 1);
-  }
 
 export default function askLCM(name: string, round: number, rounds: number) {
     if (round >= rounds) {

@@ -1,23 +1,11 @@
-
 import * as readline from 'readline';
+import { generateProgression, getRandomInt } from './features';
 
 // интерфейс для взаимодействия с консолью
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-
-function getRandomInt(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min) + min);
-  }
-
-function generateProgression(start: number, ratio: number, length: number): number[] {
-    const progression = [];
-    for (let i = 0; i < length; i += 1) {
-      progression.push(start * (ratio ** i));
-    }
-    return progression;
-  }
   
   export default function askProgression(name: string, round: number, rounds: number) {
     if (round >= rounds) {
